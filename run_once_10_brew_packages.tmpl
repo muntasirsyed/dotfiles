@@ -1,0 +1,57 @@
+{{- if (eq .chezmoi.os "darwin") -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+formulae=(
+	autojump
+	bat
+	curl
+	deno
+    direnv
+	ffmpeg
+	git
+	git-delta
+	git-gui
+	jq
+	less
+	nvm
+	pure
+    sqlite
+	tealdeer
+	wget
+    youtube-dl
+	zplug
+)
+casks=(
+	1password
+	bartender
+    discord
+	docker
+	google-chrome
+    fantastical
+    figma
+	iterm2
+    notion
+    postico
+    postman
+	protonmail-bridge
+    raycast
+    readdle-spark
+    slack
+	spectacle
+	spotify
+    telegram
+	visual-studio-code
+)
+
+brew update
+
+brew install ${formulae[@]}
+
+brew install --cask ${casks[@]}
+
+brew cleanup
+
+echo "app store these: things, theine, hand mirror, parcel"
+{{ end }}

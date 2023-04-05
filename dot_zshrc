@@ -1,0 +1,56 @@
+
+##################################
+# ZSH
+##################################
+
+export ZSH=/Users/muntasir/.oh-my-zsh
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+
+ZSH_THEME=""
+UPDATE_ZSH_DAYS=30
+DISABLE_UPDATE_PROMPT=true
+
+source $ZSH/oh-my-zsh.sh
+
+##################################
+# Functions
+##################################
+
+function killport() { lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9 }
+
+##################################
+# Key Bindings
+##################################
+
+bindkey '[C' forward-word   # alt+left
+bindkey '[D' backward-word  # alt+right
+
+##################################
+# Plugins
+##################################
+
+[ -f ~/.zplug.sh ] && source ~/.zplug.sh
+
+##################################
+# Global
+##################################
+
+export EDITOR=nano
+export VISUAL="$EDITOR"
+export PATH="/usr/local/sbin:$PATH"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+source $(brew --prefix nvm)/nvm.sh
+
+##################################
+# Prompt
+##################################
+
+autoload -U promptinit; promptinit
+prompt pure
+
+##################################
+# Alias
+##################################
+
+alias g='git'
