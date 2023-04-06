@@ -39,6 +39,7 @@ export EDITOR=nano
 export VISUAL="$EDITOR"
 export PATH="/usr/local/sbin:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export NODE_OPTIONS="--max-old-space-size=12288"
 
 ##################################
 # Prompt
