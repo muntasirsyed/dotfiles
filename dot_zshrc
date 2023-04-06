@@ -40,8 +40,6 @@ export VISUAL="$EDITOR"
 export PATH="/usr/local/sbin:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-source $(brew --prefix nvm)/nvm.sh
-
 ##################################
 # Prompt
 ##################################
